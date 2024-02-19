@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1000568613849",
+    "project_id": "zeepalm-flutter",
+    "storage_bucket": "zeepalm-flutter.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1000568613849:android:295284d95b385bd4f847c8",
+        "android_client_info": {
+          "package_name": "com.example.zeepalmtodo"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCkC3PyoHtIqXbktexcfYpOD0T0sCxVI5s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
