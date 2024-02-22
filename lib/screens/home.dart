@@ -59,7 +59,9 @@ class _HomeScreenState extends State<HomeScreen> {
               )),
           actions: [
             Padding(
-              padding: const EdgeInsets.fromLTRB(8, 8, 36, 8),
+              padding: ResponsiveBreakpoints.of(context).isMobile
+                  ? const EdgeInsets.fromLTRB(8, 8, 16, 8)
+                  : const EdgeInsets.fromLTRB(8, 8, 64, 8),
               child: Align(
                 alignment: Alignment.centerLeft,
                 child: GestureDetector(
@@ -94,7 +96,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         child: const Icon(
                           Icons.logout_outlined,
                           color: Colors.black,
-                          size: 28,
+                          size: 40,
                         ),
                       ),
                     ),
@@ -111,7 +113,9 @@ class _HomeScreenState extends State<HomeScreen> {
                 : const EdgeInsets.all(16),
             child: Stack(children: [
               SizedBox(
-                height: MediaQuery.of(context).size.height,
+                height: ResponsiveBreakpoints.of(context).isMobile
+                    ? MediaQuery.of(context).size.height - 100
+                    : MediaQuery.of(context).size.height,
                 child: StreamBuilder(
                     stream: FirebaseFirestore.instance
                         .collection('Task')
@@ -170,9 +174,15 @@ class _HomeScreenState extends State<HomeScreen> {
                           message: "Add Task",
                           child: Container(
                             padding: const EdgeInsets.all(14),
-                            decoration: const BoxDecoration(
+                            decoration: BoxDecoration(
                                 shape: BoxShape.circle,
-                                color: AppColors.button),
+                                color: AppColors.button,
+                                boxShadow: [
+                                  BoxShadow(
+                                      color: AppColors.button.withOpacity(0.1),
+                                      offset: const Offset(0, 4),
+                                      blurRadius: 10)
+                                ]),
                             child: const Icon(
                               Icons.add,
                               color: Colors.white,
